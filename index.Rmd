@@ -30,7 +30,7 @@ opts_chunk$set(
 
 # Introduction
 
-As of November 30th, the coronavirus disease 2019 (COVID-19) pandemic had resulted in 49,716,825 cases and 806,398 deaths in the United States. As of November 24, 2021, around 28 percent of total COVID-19 deaths in the United States have been among adults 85 years and older, despite this age group only accounting for 2 percent of the U.S. population.The widespread availability of vaccines in the United States helped to reduce cases in the spring and early summer. In this analysis, we obtain the COVID-19 Deaths and Fully Vaccinated Status Data, collected from January 1st, 2020 to December 1st, 2021. The main question that this analysis explores is the association between number of deaths due to COVID-19 and the number of people who have been fully vaccinated in different age groups.
+As of November 30th, the coronavirus disease 2019 (COVID-19) pandemic had resulted in 49,716,825 cases and 806,398 deaths in the United States. As of November 24, 2021, around 28 percent of total COVID-19 deaths in the United States have been among adults 85 years and older, despite this age group only accounting for 2 percent of the U.S. population.The widespread availability of vaccines in the United States helped to reduce cases in the spring and early summer. In this analysis, we obtain the COVID-19 Deaths and Fully Vaccinated Status Data, collected from January 1st, 2020 to December 1st, 2021. The main question that this analysis explores is the association between the number of deaths due to COVID-19 and the number of people who have been fully vaccinated in different age groups.
 
 # Methods
 
@@ -336,7 +336,7 @@ ggplotly(map4)
 
 ## Correlation between COVID-19 deaths and fully vaccinated status
 
-The association between COVID-19 Deaths and fully vaccinated status is explored by correlation analysis of the proportion of COVID-19 deaths in all deaths and the proportion of fully vaccinated people in the population. The correlation between these two variables is 0.07, which is close to 0. Therefore, these two variables are not related. The association between COVID-19 Deaths and fully vaccinated status in different age groups is also showed in this smooth graph. The plot shows that there is no definite or fixed trend in the relationship between the two variables. There seems to have a increasing trend when the fully vaccinated proportion is small, but a turning point appears when the proportion increases. Still, the confidence intervals are quite wide as shown in the plot, so the trends are not reliable. 
+The association between COVID-19 Deaths and fully vaccinated status is explored by correlation analysis of the proportion of COVID-19 deaths in all deaths and the proportion of fully vaccinated people in the population. The correlation between these two variables is 0.02, which is close to 0. Therefore, these two variables are not related. The association between COVID-19 Deaths and fully vaccinated status in different age groups is also showed in this smooth graph. The plot shows that there is no definite or fixed trend in the relationship between the two variables. There seems to have a increasing trend when the fully vaccinated proportion is small, but a turning point appears when the proportion increases. Still, the confidence intervals are quite wide as shown in the plot, so the trends are not reliable. 
 
 ```{r correlation}
 cor <- cor(cov_age_vacc[cov_age_vacc$Age.group=="All",]$Deaths.prop, cov_age_vacc[cov_age_vacc$Age.group=="All",]$Vacc.prop)
