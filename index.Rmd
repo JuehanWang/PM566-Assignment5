@@ -336,7 +336,7 @@ ggplotly(map4)
 
 ## Correlation between COVID-19 deaths and fully vaccinated status
 
-The association between COVID-19 Deaths and fully vaccinated status is explored by correlation analysis of the proportion of COVID-19 deaths in all deaths and the proportion of fully vaccinated people in the population. The correlation between these two variables is 0.02, which is close to 0. Therefore, these two variables are not related. The association between COVID-19 Deaths and fully vaccinated status in different age groups is also showed in this smooth graph. The plot shows that there is no definite or fixed trend in the relationship between the two variables. There seems to have a increasing trend when the fully vaccinated proportion is small, but a turning point appears when the proportion increases. Still, the confidence intervals are quite wide as shown in the plot, so the trends are not reliable. 
+The association between COVID-19 Deaths and fully vaccinated status is explored by correlation analysis of the proportion of COVID-19 deaths in all deaths and the proportion of fully vaccinated people in the population. The correlation between these two variables is 0.02, which is close to 0. Therefore, these two variables are not related. The association between COVID-19 Deaths and fully vaccinated status in different age groups is also showed in this smooth graph. The plot shows that there is no definite or fixed trend in the relationship between the two variables. There seems to have an increasing trend when the fully vaccinated proportion is small, but a turning point appears when the proportion increases. Still, the confidence intervals are quite wide as shown in the plot, so the trends are not reliable. 
 
 ```{r correlation}
 cor <- cor(cov_age_vacc[cov_age_vacc$Age.group=="All",]$Deaths.prop, cov_age_vacc[cov_age_vacc$Age.group=="All",]$Vacc.prop)
@@ -352,5 +352,5 @@ ggplotly(smooth)
 
 # Conclusion
 
-There is no association between COVID-19 Deaths and fully vaccinated status in different age groups. It is also found that people over the age of 65 have the highest deaths, which means that younger people are more likely to survive from COVID-19. Meanwhile, people older than 65 years old have the largest proportion of having been fully vaccinated among the whole population. In future analysis, longer term association between deaths due to COVID-19 and the status of fully vaccinated among different age group should be looked at.
+There is no association between COVID-19 Deaths and fully vaccinated status in different age groups. It is also found that people over the age of 65 have the highest deaths, which means that younger people are more likely to survive from COVID-19. Meanwhile, people older than 65 years old have the largest proportion of having been fully vaccinated among the whole population. In future analysis, longer term association between deaths due to COVID-19 and the status of fully vaccinated among different age groups should be looked at.
 
