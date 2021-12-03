@@ -341,14 +341,21 @@ cor <- cor(cov_age_vacc[cov_age_vacc$Age.group=="All",]$Deaths.prop, cov_age_vac
 knitr::kable(cor, col.names = "correlation")
 ```
 
+
+```{r association2, warning=FALSE, message=FALSE, echo=FALSE}
+smooth2 <- ggplot(data = cov_age_vacc[cov_age_vacc$Age.group=="All",]) + 
+  geom_smooth(mapping = aes(x = Vacc.prop, y = Deaths.prop, linetype = Age.group, fill = Age.group)) + 
+    labs(title = "Fully Vaccinated Proportion vs. Deaths Proportion", x  = "Fully Vaccinated Proportion", y = "Deaths Proportion")
+ggplotly(smooth2)
+```
+
 ```{r association, warning=FALSE, message=FALSE, echo=FALSE}
-smooth <- ggplot(data = cov_age_vacc) + 
+smooth <- ggplot(data = cov_age_vacc[cov_age_vacc$Age.group!="All",]) + 
   geom_smooth(mapping = aes(x = Vacc.prop, y = Deaths.prop, linetype = Age.group, fill = Age.group)) + 
     labs(title = "Fully Vaccinated Proportion vs. Deaths Proportion", x  = "Fully Vaccinated Proportion", y = "Deaths Proportion")
 ggplotly(smooth)
 ```
-
 # Conclusion
 
-There is no association between COVID-19 Deaths and fully vaccinated status in different age groups. It is also found that people over the age of 65 have the highest deaths, which means that younger people are more likely to survive from COVID-19. Meanwhile, people older than 65 years old have the largest proportion of having been fully vaccinated among the whole population. In future analysis, longer term association between deaths due to COVID-19 and the status of fully vaccinated among different age groups should be looked at.
+There is no association between COVID-19 Deaths and fully vaccinated status in different age groups based on the current data. It is also found that people over the age of 65 have the highest deaths, which means that younger people are more likely to survive from COVID-19. Meanwhile, people older than 65 years old have the largest proportion of having been fully vaccinated among the whole population. In future analysis, longer term association between deaths due to COVID-19 and the status of fully vaccinated among different age groups should be looked at.
 
